@@ -10,6 +10,7 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
 ## Guidelines for Copilot
 
 ### File-Specific Instructions
+- Relationship between reports and semantic models is defined in the `definition.pbir` file inside each report folder. Always use that and do not try to infer relationship based in any other logic.
 - For '.tmdl' files:
 
     - When asked to generate descriptions:
