@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "0ca46b73ec7f78716850",
+  "position": {
+    "x": 613.43283582089555,
+    "y": 360,
+    "z": 10000,
+    "height": 326.86567164179104,
+    "width": 540.8955223880597,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "An Inconsistency has been found in the data regarding Manufacturing price and Sale Price."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "We would expect that the Sale Price of a product would be always higher than the Manufacturing Price (otherwise it would make no sense to manufacture a product), but that's not the case for some products as you can see in the Table above. There are also other products with a Price Margin unexpectedly high, and the"
+                  },
+                  {
+                    "value": " Pricing Margin calculated (using Sale Price and Manufacturing price) differs very much from the Profit Margin calculated (using Profit and Sales ), which should be closer than they are.",
+                    "textStyle": {
+                      "fontSize": "13.3333px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " This indicates that the data may have issues that need to be investigated further."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Therefore, in a real case scenario, this data should be reviewed in order to correct the issue before delivering the final dashboad to the end users."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "For that reason, no Dashboard regarding Sale Price and Manufacturing Price was developed for this case (Only the 2 cards displayed on the Overview page, for the matter of compounding the whole financial scenario)."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

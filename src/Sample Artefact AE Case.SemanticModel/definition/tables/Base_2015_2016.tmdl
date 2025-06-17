@@ -1,0 +1,221 @@
+table Base_2015_2016
+	isHidden
+	lineageTag: 96a294b3-0c2d-4d13-9509-c3bcaa2b1205
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: ea204687-f1e6-4e44-9eb4-22d6420bb200
+		summarizeBy: none
+		sourceColumn: Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		isHidden
+		lineageTag: 43c6e55d-8d87-471f-9347-42f31e741923
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		isHidden
+		lineageTag: 4d48ae2e-550c-4e43-95fe-f3dada8c3f28
+		summarizeBy: none
+		sourceColumn: Product
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Band'
+		dataType: string
+		isHidden
+		lineageTag: 7562fdcd-49fe-43c9-9154-6eae0b06732d
+		summarizeBy: none
+		sourceColumn: Discount Band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Units Sold'
+		dataType: int64
+		isHidden
+		lineageTag: a6c379cf-6576-4370-9a82-6397bba92c23
+		summarizeBy: sum
+		sourceColumn: Units Sold
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Manufacturing Price'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 89b51f6f-815e-4dc6-a281-d70ac88b282b
+		summarizeBy: sum
+		sourceColumn: Manufacturing Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Price'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 01e6a9fb-5abc-41fd-9cd0-20290ab1d818
+		summarizeBy: sum
+		sourceColumn: Sale Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Sales'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6eb28b85-5e05-4c1a-b309-d613b06bd783
+		summarizeBy: sum
+		sourceColumn: Gross Sales
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discounts
+		dataType: double
+		isHidden
+		lineageTag: e29cd824-8775-4ce7-8da2-9e6e9f2ff154
+		summarizeBy: sum
+		sourceColumn: Discounts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ' Sales'
+		dataType: double
+		isHidden
+		lineageTag: e991a7de-2807-43b2-8c2d-3420d54671ce
+		summarizeBy: sum
+		sourceColumn: " Sales"
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COGS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ed0e09ac-29f2-4153-964a-646c136e4d41
+		summarizeBy: sum
+		sourceColumn: COGS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit
+		dataType: double
+		isHidden
+		lineageTag: 14ef2eae-dbce-4006-82f7-a31723661082
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: b1d2c005-9111-4d8e-bac5-4b457919d446
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 9df3332f-48e2-4906-9f1a-7092da785c4e
+			defaultHierarchy: LocalDateTable_907ad28a-3cb3-4962-8d00-75cc71a29096.'Hierarquia de datas'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1bd6ef17-e8f0-4f71-a0b2-55ff3ed753d8
+		summarizeBy: sum
+		sourceColumn: Month Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		isHidden
+		lineageTag: 5c0586c4-4f10-4e7b-b8bf-b4db97c6c8f6
+		summarizeBy: none
+		sourceColumn: Month Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f284dd88-6fad-44f4-9824-e5edf5545c83
+		summarizeBy: sum
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Base_2015_2016 = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\Cliente\OneDrive\Desktop\Case Artefact\Base_de_dados_2015_2016.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Segment", type text}, {"Country", type text}, {"Product", type text}, {"Discount Band", type text}, {"Units Sold", type number}, {"Manufacturing Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Gross Sales", Int64.Type}, {"Discounts", type number}, {" Sales", type number}, {"COGS", Int64.Type}, {"Profit", type number}, {"Date", type date}, {"Month Number", Int64.Type}, {"Month Name", type text}, {"Year", Int64.Type}, {"Product_Name", type any}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Product_Name"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Colunas Removidas",{{"Units Sold", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

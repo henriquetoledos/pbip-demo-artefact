@@ -1,0 +1,73 @@
+table _Measures
+	lineageTag: 555592dc-a6da-478d-b3e1-dccb40e4811c
+
+	measure 'Profit Margin' = SUM(fact_Sales[Profit]) / SUM(fact_Sales[ Sales])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d26e60ac-322e-44d8-b781-d4623d1dafbb
+
+		changedProperty = IsHidden
+
+	measure 'Discount rate' = SUM(fact_Sales[Discounts]) / SUM(fact_Sales[Gross Sales])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6cd5d271-7738-4f0c-8fe3-06a61d8dccb9
+
+	measure 'Sales MoM Var' = SUM(fact_Sales[ Sales]) - [Sales Last month]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1203aa5c-d982-46ab-9450-b1dfd3294bfd
+
+	measure 'Sales MoM %' = DIVIDE([Sales MoM Var], [Sales Last month])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5cd7160e-e0e3-4b6f-8181-5e94dc248d0a
+
+	measure 'Sales Last month' =
+			
+			CALCULATE(
+			    SUM(fact_Sales[ Sales]),
+			    PARALLELPERIOD(
+			        dimDate[Date].[Date],
+			        -1,
+			        MONTH)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 59e9e6fe-f6c5-4008-bd7a-af0292d88550
+
+		changedProperty = IsHidden
+
+	measure 'Sales Last year' =
+			
+			CALCULATE(
+			    SUM(fact_Sales[ Sales]),
+			    PARALLELPERIOD(
+			        dimDate[Date].[Date],
+			        -1,
+			        YEAR)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 216798f7-43c9-4613-a185-0c1f812136cc
+
+	measure 'Sales YoY Var' = SUM(fact_Sales[ Sales]) - [Sales Last year]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: de72d8dc-ab44-4206-b310-78ddadb7e7f5
+
+	measure 'Sales YoY %' = DIVIDE([Sales YoY Var], [Sales Last year])
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		lineageTag: f1529d48-40b3-4df0-9dee-5b7d8569429f
+
+	measure 'Pricing Margin' = (AVERAGE(fact_Sales[Sale Price]) - AVERAGE(fact_Sales[Manufacturing Price])) / AVERAGE(fact_Sales[Manufacturing Price])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ca5a8f26-7793-43f2-a668-6acffe95f09c
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

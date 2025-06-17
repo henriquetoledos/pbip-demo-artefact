@@ -1,0 +1,34 @@
+table dimDiscountBand
+	lineageTag: 715aab19-3e87-4f46-b553-b2555bad539f
+
+	column 'Discount Band'
+		dataType: string
+		lineageTag: c093fb1d-2ae6-4708-81c5-e846ff7370e4
+		summarizeBy: none
+		sourceColumn: Discount Band
+		sortByColumn: 'Discount Band Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Band Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: e9076509-6a15-4522-8cd4-8e618f92e595
+		summarizeBy: none
+		sourceColumn: Discount Band Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimDiscountBand = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8svPS1XSUTJUitWJVvLJLweyjcBs39SUzNJcINcYzPXITM8AckyUYmMB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Discount Band" = _t, #"Discount Band Order" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Discount Band", type text}, {"Discount Band Order", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

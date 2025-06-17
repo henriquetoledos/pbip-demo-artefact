@@ -1,0 +1,50 @@
+{
+  "name": "Artefact_case",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F4F4"
+              }
+            },
+            "transparency": 30
+          }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "show": true,
+            "radius": 5
+          }
+        ]
+      }
+    }
+  },
+  "dataColors": [
+    "#026EE0",
+    "#012348",
+    "#FF0066",
+    "#8B8B8B",
+    "#1AAB40",
+    "#D64554",
+    "#D9B300",
+    "#D64550"
+  ],
+  "textClasses": {
+    "label": {
+      "fontFace": "'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "color": "#012348"
+    }
+  }
+}

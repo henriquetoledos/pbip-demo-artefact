@@ -1,0 +1,159 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "35ea5472c49a12f820ac",
+  "position": {
+    "x": 612.53731343283584,
+    "y": 111.04477611940298,
+    "z": 8000,
+    "height": 208.65671641791045,
+    "width": 540.8955223880597,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_Sales"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "SalesData.Product",
+              "nativeQueryRef": "Product"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_Sales"
+                        }
+                      },
+                      "Property": "Manufacturing Price"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(SalesData.Manufacturing Price)",
+              "nativeQueryRef": "Average of Manufacturing Price"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_Sales"
+                        }
+                      },
+                      "Property": "Sale Price"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(SalesData.Sale Price)",
+              "nativeQueryRef": "Average of Sale Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Pricing Margin"
+                }
+              },
+              "queryRef": "Measures_.Pricing Margin",
+              "nativeQueryRef": "Pricing Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Profit Margin"
+                }
+              },
+              "queryRef": "Measures_.Profit Margin",
+              "nativeQueryRef": "Profit Margin"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fact_Sales"
+                      }
+                    },
+                    "Property": "Manufacturing Price"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146.77288812889475D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Avg(SalesData.Manufacturing Price)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.3432773479437D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Avg(SalesData.Sale Price)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
