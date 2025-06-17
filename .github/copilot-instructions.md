@@ -1,5 +1,5 @@
 <!---
-Contributors: Jimmy Smeijsters (inspiration), John Kerski (PQ prompt)
+Contributors: Jimmy Smeijsters, John Kerski
 -->
 
 # Copilot Instructions
