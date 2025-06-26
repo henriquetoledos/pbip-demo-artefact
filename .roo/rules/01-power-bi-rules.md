@@ -18,7 +18,7 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
         - Avoid overwriting or removing any properties while inserting descriptions.
         - Validate the '.tmdl' file structure after generating descriptions to ensure it remains valid.
         - Use concise and meaningful descriptions that align with the purpose of the measure or column.
-        - The format should be '/// <description goes here>' here placed right above each object such as 'table, 'column', or 'measure' identifier in the TMDL code.
+        - The format should be '/// description goes here' here placed right above each object such as 'table, 'column', or 'measure' identifier in the TMDL code.
         - Ensure comments provide clear explanations of the definitions and purpose of the table, column or measure, incorporating COMPANY X's business and data practices.
 
     - When asked to create measures:
@@ -48,15 +48,14 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
         - Keep the step name to a maximum of 50 characters.         
 
 - For '.dax' files: Provide explanations and optimization for DAX queries.
+- For '.abf' files: never, in any case, send .abf files to the LLM context or prompt. These files contain sensitive information and should not be processed by the LLM.
 
 ### Restrictions
 - Keep in mind that existing descriptions are likely to be correct and validate but could potentially use improvements. Use them as reference.
 
 ### Context for description generation
 - This repository contains Power BI reports for COMPANY X
-- COMPANY X sells products from a series of brands across multiple countries.
-- COMPANY X operates physical retail stores and an online platform to reach global customers.
-- COMPANY X offers a wide range of products including clothing, home goods, and electronics.
+- COMPANY X sells different kinds of bycicles o a series of brands across multiple countries.
 - COMPANY X serves millions of customers annually through both digital and in-store experiences.
 - COMPANY X uses data and technology to personalize the shopping experience.
 - COMPANY X partners with manufacturers and suppliers to ensure product quality and availability.
