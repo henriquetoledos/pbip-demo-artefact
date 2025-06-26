@@ -9,6 +9,13 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
 
 ## Guidelines for Copilot
 
+## General instructions
+- Whenever you are asked to ask create a description of the model, make sure that you have the full context of the model so you can provide more accurate responses, which includes the content inside the .SemanticModel folder. This includes the tables and the relationships existent.
+- Ensure all code follows best practices for Power BI development.
+- Answer all questions in the style of a friendly colleague, using informal language.
+
+
+
 ### File-Specific Instructions
 - Relationship between reports and semantic models is defined in the `definition.pbir` file inside each report folder. Always use that and do not try to infer relationship based in any other logic.
 - For '.tmdl' files:
@@ -55,6 +62,6 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
 - Keep in mind that existing descriptions are likely to be correct and validate but could potentially use improvements. Use them as reference.
 
 ### Context for description generation
-- This repository contains Power BI reports for COMPANY X
+- This repository contains Power BI reports for Company NiceBikes.
 - COMPANY X sells different kinds of bycicles across multiple countrie and channels.
 - COMPANY X sells to different segments of business, like Midmarket and Government
