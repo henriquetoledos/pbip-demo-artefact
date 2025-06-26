@@ -23,6 +23,21 @@
                       "Entity": "dimDate"
                     }
                   },
+                  "Property": "Month"
+                }
+              },
+              "queryRef": "dimDate.Month",
+              "nativeQueryRef": "Month",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimDate"
+                    }
+                  },
                   "Property": "Date"
                 }
               },
@@ -31,9 +46,6 @@
               "active": true
             }
           ]
-        },
-        "Tooltips": {
-          "projections": []
         },
         "Y": {
           "projections": [
@@ -58,24 +70,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dimDate"
-                  }
-                },
-                "Property": "Date"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
