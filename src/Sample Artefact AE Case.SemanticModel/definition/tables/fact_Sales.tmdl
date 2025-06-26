@@ -166,7 +166,5 @@ table fact_Sales
 				in
 				    #"Replaced Value"
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

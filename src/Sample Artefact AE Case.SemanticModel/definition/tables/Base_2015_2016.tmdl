@@ -204,7 +204,7 @@ table Base_2015_2016
 		mode: import
 		source =
 				let
-				    Fonte = Excel.Workbook(File.Contents("C:\Users\Cliente\OneDrive\Desktop\Case Artefact\Base_de_dados_2015_2016.xlsx"), null, true),
+				    Fonte = Excel.Workbook(Web.Contents("https://raw.githubusercontent.com/henriquetoledos/pbi-demo-artefact/main/data/Base_de_dados_2013_2014.xlsx"), null, true),
 				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Segment", type text}, {"Country", type text}, {"Product", type text}, {"Discount Band", type text}, {"Units Sold", type number}, {"Manufacturing Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Gross Sales", Int64.Type}, {"Discounts", type number}, {" Sales", type number}, {"COGS", Int64.Type}, {"Profit", type number}, {"Date", type date}, {"Month Number", Int64.Type}, {"Month Name", type text}, {"Year", Int64.Type}, {"Product_Name", type any}}),
