@@ -17,54 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "dimDate"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "dimDate"
                     }
                   },
-                  "Level": "Ano"
+                  "Property": "Date"
                 }
               },
               "queryRef": "dimDate.Date.Variation.Hierarquia de datas.Ano",
               "nativeQueryRef": "Date Ano",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "dimDate"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
-                    }
-                  },
-                  "Level": "Mês"
-                }
-              },
-              "queryRef": "dimDate.Date.Variation.Hierarquia de datas.Mês",
-              "nativeQueryRef": "Date Mês",
               "active": true
             }
           ]

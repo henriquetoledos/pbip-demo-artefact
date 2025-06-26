@@ -17,24 +17,13 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "dimDate"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "dimDate"
                     }
                   },
-                  "Level": "Ano"
+                  "Property": "Date"
                 }
               },
               "queryRef": "dimDate.Date.Variation.Hierarquia de datas.Ano",

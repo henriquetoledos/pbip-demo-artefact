@@ -17,80 +17,23 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "dimDate"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "dimDate"
                     }
                   },
-                  "Level": "Ano"
+                  "Property": "Date"
                 }
               },
               "queryRef": "dimDate.Date.Variation.Hierarquia de datas.Ano",
               "nativeQueryRef": "Date Ano",
               "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "dimDate"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Date"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
-                    }
-                  },
-                  "Level": "Mês"
-                }
-              },
-              "queryRef": "dimDate.Date.Variation.Hierarquia de datas.Mês",
-              "nativeQueryRef": "Date Mês",
-              "active": true
             }
           ]
         },
         "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "dimDate"
-                        }
-                      },
-                      "Property": "Month"
-                    }
-                  },
-                  "Function": 3
-                }
-              },
-              "queryRef": "Min(dimDate.Month)",
-              "nativeQueryRef": "First Month"
-            }
-          ]
+          "projections": []
         },
         "Y": {
           "projections": [
@@ -110,6 +53,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimDate"
+                  }
+                },
+                "Property": "Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
