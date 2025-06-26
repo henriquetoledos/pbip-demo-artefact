@@ -1,18 +1,3 @@
-relationship eb55c44c-07c2-42f7-b838-44323b28712a
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Base_2013_2014.Date
-	toColumn: LocalDateTable_967e1e87-4ea1-4655-bf8d-9474b4d61d0a.Date
-
-relationship 9df3332f-48e2-4906-9f1a-7092da785c4e
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Base_2015_2016.Date
-	toColumn: LocalDateTable_907ad28a-3cb3-4962-8d00-75cc71a29096.Date
-
-relationship f0ff49f5-7d5c-4bd0-8a54-b8b9bc9d8828
-	joinOnDateBehavior: datePartOnly
-	fromColumn: dimDate.Date
-	toColumn: LocalDateTable_1bb4f252-2dbb-40de-b774-0e05650d473f.Date
-
 relationship c2b2f375-5269-4fc9-9029-f5728991b904
 	fromColumn: fact_Sales.Date
 	toColumn: dimDate.Date

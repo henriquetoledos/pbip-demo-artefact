@@ -154,11 +154,6 @@ table Base_2015_2016
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: 9df3332f-48e2-4906-9f1a-7092da785c4e
-			defaultHierarchy: LocalDateTable_907ad28a-3cb3-4962-8d00-75cc71a29096.'Hierarquia de datas'
-
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic

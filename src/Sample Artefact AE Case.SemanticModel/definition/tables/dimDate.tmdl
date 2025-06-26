@@ -8,11 +8,6 @@ table dimDate
 		isNameInferred
 		sourceColumn: [Date]
 
-		variation Variation
-			isDefault
-			relationship: f0ff49f5-7d5c-4bd0-8a54-b8b9bc9d8828
-			defaultHierarchy: LocalDateTable_1bb4f252-2dbb-40de-b774-0e05650d473f.'Hierarquia de datas'
-
 		annotation SummarizationSetBy = Automatic
 
 	column Year = YEAR(dimDate[Date])
@@ -29,7 +24,7 @@ table dimDate
 
 		annotation SummarizationSetBy = Automatic
 
-	column Month = Format(dimDate[Date].[Date], "MMM")
+	column Month = Format(dimDate[Date], "MMM")
 		lineageTag: deff6c43-5533-4a83-9ef9-38e1bb04b3bb
 		summarizeBy: none
 		sortByColumn: 'Month number'

@@ -8,20 +8,16 @@ model Model
 
 annotation PBI_QueryOrder = ["Base_2013_2014","Base_2015_2016","fact_Sales","Table","_Measures","dimDiscountBand"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBIDesktopVersion = 2.144.878.0 (25.06)+9cca29236de5114792f4d7188221f91ad4a5cc50
 
 annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
 ref table Base_2013_2014
-ref table DateTableTemplate_352ba790-5f11-4628-b3dd-fba4900b2066
-ref table LocalDateTable_967e1e87-4ea1-4655-bf8d-9474b4d61d0a
 ref table Base_2015_2016
-ref table LocalDateTable_907ad28a-3cb3-4962-8d00-75cc71a29096
 ref table fact_Sales
 ref table dimDate
-ref table LocalDateTable_1bb4f252-2dbb-40de-b774-0e05650d473f
 ref table _Measures
 ref table dimDiscountBand
 
