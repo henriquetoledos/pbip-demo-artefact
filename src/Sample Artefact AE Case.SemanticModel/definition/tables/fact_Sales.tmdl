@@ -156,6 +156,14 @@ table fact_Sales
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Test Column' = SUMX(fact_Sales, fact_Sales[ Sales] - fact_Sales[COGS])
+		lineageTag: 6cd23792-082b-4522-b0c9-23d95f504e88
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition fact_Sales = m
 		mode: import
 		source =

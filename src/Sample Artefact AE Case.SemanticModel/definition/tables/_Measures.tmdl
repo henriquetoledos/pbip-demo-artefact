@@ -1,58 +1,67 @@
 table _Measures
 	lineageTag: 555592dc-a6da-478d-b3e1-dccb40e4811c
 
+	/// Calculates the profit margin percentage by dividing total profit by total sales for NiceBikes business analysis
 	measure 'Profit Margin' = SUM(fact_Sales[Profit]) / SUM(fact_Sales[ Sales])
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d26e60ac-322e-44d8-b781-d4623d1dafbb
 
 		changedProperty = IsHidden
 
+	/// Calculates the discount rate percentage by dividing total discounts by gross sales to measure discount impact on NiceBikes revenue
 	measure 'Discount rate' = SUM(fact_Sales[Discounts]) / SUM(fact_Sales[Gross Sales])
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 6cd5d271-7738-4f0c-8fe3-06a61d8dccb9
 
+	/// Calculates the absolute month-over-month sales variation by comparing current period sales with previous month for NiceBikes trend analysis
 	measure 'Sales MoM Var' = SUM(fact_Sales[ Sales]) - [Sales Last month]
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 1203aa5c-d982-46ab-9450-b1dfd3294bfd
 
+	/// Calculates the percentage month-over-month sales growth rate for NiceBikes performance tracking and trend identification
 	measure 'Sales MoM %' = DIVIDE([Sales MoM Var], [Sales Last month])
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 5cd7160e-e0e3-4b6f-8181-5e94dc248d0a
 
+	/// Returns the total sales amount from the previous month using time intelligence for NiceBikes comparative analysis
 	measure 'Sales Last month' =
-			
-			CALCULATE(
-			    SUM(fact_Sales[ Sales]),
-			    PARALLELPERIOD(
-			        dimDate[Date].[Date],
-			        -1,
-			        MONTH)
-			)
+		
+		CALCULATE(
+		    SUM(fact_Sales[ Sales]),
+		    PARALLELPERIOD(
+		        dimDate[Date].[Date],
+		        -1,
+		        MONTH)
+		)
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 59e9e6fe-f6c5-4008-bd7a-af0292d88550
 
 		changedProperty = IsHidden
 
+	/// Returns the total sales amount from the same period in the previous year using time intelligence for NiceBikes year-over-year comparisons
 	measure 'Sales Last year' =
-			
-			CALCULATE(
-			    SUM(fact_Sales[ Sales]),
-			    PARALLELPERIOD(
-			        dimDate[Date].[Date],
-			        -1,
-			        YEAR)
-			)
+		
+		CALCULATE(
+		    SUM(fact_Sales[ Sales]),
+		    PARALLELPERIOD(
+		        dimDate[Date].[Date],
+		        -1,
+		        YEAR)
+		)
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 216798f7-43c9-4613-a185-0c1f812136cc
 
+	/// Calculates the absolute year-over-year sales variation by comparing current period sales with same period last year for NiceBikes growth analysis
 	measure 'Sales YoY Var' = SUM(fact_Sales[ Sales]) - [Sales Last year]
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: de72d8dc-ab44-4206-b310-78ddadb7e7f5
 
+	/// Calculates the percentage year-over-year sales growth rate for NiceBikes annual performance evaluation and strategic planning
 	measure 'Sales YoY %' = DIVIDE([Sales YoY Var], [Sales Last year])
 		formatString: #,0.0%;-#,0.0%;#,0.0%
 		lineageTag: f1529d48-40b3-4df0-9dee-5b7d8569429f
 
+	/// Calculates the pricing margin percentage by comparing average sale price with manufacturing cost for NiceBikes profitability analysis
 	measure 'Pricing Margin' = (AVERAGE(fact_Sales[Sale Price]) - AVERAGE(fact_Sales[Manufacturing Price])) / AVERAGE(fact_Sales[Manufacturing Price])
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: ca5a8f26-7793-43f2-a668-6acffe95f09c
