@@ -63,5 +63,5 @@ This repository contains Power BI reports in PBIP (Power BI Project) format, loc
 
 ### Context for description generation
 - This repository contains Power BI reports for Company NiceBikes.
-- COMPANY X sells different kinds of bycicles across multiple countrie and channels.
-- COMPANY X sells to different segments of business, like Midmarket and Government
+- Company NiceBikes sells different kinds of bycicles across multiple countrie and channels.
+- Company NiceBikes sells to different segments of business, like Midmarket and Government
