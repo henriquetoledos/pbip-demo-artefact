@@ -1554,7 +1554,7 @@ cultureInfo en-US
 			    "sale.customers_with_sales": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Sales",
+			          "ConceptualEntity": "_Measures",
 			          "ConceptualProperty": "# Customers (w/ Sales)"
 			        }
 			      },

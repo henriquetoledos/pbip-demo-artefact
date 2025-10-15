@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["HttpSource","RangeStart","RangeEnd","Environment","Randomizer","Calendar","Sales","Product","Customer","Store","About"]
+annotation PBI_QueryOrder = ["HttpSource","RangeStart","RangeEnd","Environment","Randomizer","Calendar","Sales","Product","Customer","Store","About","_Measures"]
 
 annotation BestPracticeAnalyzer_IgnoreRules = {"RuleIDs":["PARTITION_NAME_SHOULD_MATCH_TABLE_NAME_FOR_SINGLE_PARTITION_TABLES"]}
 
@@ -25,6 +25,7 @@ ref table Store
 ref table About
 ref table 'Field Parameter'
 ref table 'Time Intelligence'
+ref table _Measures
 
 ref role 'Store - Canada'
 ref role 'Store - United States'
