@@ -2,10 +2,6 @@
 table Sales
 	lineageTag: 97143e5b-7736-4fcb-8042-26b92b1f5684
 
-	measure '# Customers (w/ Sales)' = DISTINCTCOUNT('Sales'[CustomerKey])
-		formatString: #,##0
-		lineageTag: 4ec872f0-a42d-4aa9-bf6b-1ca7c4916336
-
 	measure '# Products (w/ Sales)' = DISTINCTCOUNT('Sales'[ProductKey])
 		formatString: #,##0
 		lineageTag: b11c3386-30b8-4303-8ddb-ac0d2fa7660d
@@ -136,6 +132,14 @@ table Sales
 	measure Cost = SUMX ( Sales, Sales[Quantity] * Sales[Unit Cost] )
 		formatString: $ #,##0
 		lineageTag: 3e5cb67e-a411-476f-ad34-7ec10dfd084d
+
+	measure '# Sales YTD' = TOTALYTD([# Sales], 'Calendar'[Date])
+		lineageTag: 8d10b985-afc6-4859-91a5-f35efe5b2dc2
+
+	/// This measure is the sum of column 'Sales'[Net Price]
+	measure 'Sum of Net Price' = SUM('Sales'[Net Price])
+		formatString: 0.00
+		lineageTag: 16c9f60f-0dcb-47d4-9891-b82aa009188a
 
 	column 'Order Number'
 		dataType: int64
@@ -287,6 +291,7 @@ table Sales
 
 	column 'Net Price'
 		dataType: decimal
+		isHidden
 		formatString: "€"#,0.###############;("€"#,0.###############);"€"#,0.###############
 		lineageTag: a190bb72-9254-4740-b536-2c016eef5c07
 		summarizeBy: sum

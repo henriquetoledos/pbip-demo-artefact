@@ -2,8 +2,6 @@ perspective Sales
 
 	perspectiveTable Sales
 
-		perspectiveMeasure '# Customers (w/ Sales)'
-
 		perspectiveMeasure '# Products (w/ Sales)'
 
 		perspectiveMeasure 'Sales Qty'
@@ -77,4 +75,8 @@ perspective Sales
 		perspectiveColumn 'Category Code'
 
 		perspectiveColumn Category
+
+	perspectiveTable _Measures
+
+		perspectiveMeasure '# Customers (w/ Sales)'
 
