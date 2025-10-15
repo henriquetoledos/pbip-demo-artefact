@@ -28,3 +28,8 @@ You can use [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview
 Main External Power BI Tools
 - [Tabular Editor](https://docs.tabulareditor.com/te2/Getting-Started.html) - follow the instructions on the website to download and install the tool
 - [DAX Studio](https://daxstudio.org/)
+
+
+## BPA Rules
+
+You can find the standard Best Practice Analyzer (BPA) Rules on this link: https://raw.githubusercontent.com/microsoft/Analysis-Services/master/BestPracticeRules/BPARules.json
