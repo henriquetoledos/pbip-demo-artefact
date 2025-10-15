@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
   "displayName": "Computers",
   "name": "429f324a76d806abde60",
   "options": {
@@ -507,7 +507,7 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Sales"
+                          "Entity": "_Measures"
                         }
                       },
                       "Property": "# Customers (w/ Sales)"
@@ -666,7 +666,7 @@
                     "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Sales"
+                          "Entity": "_Measures"
                         }
                       },
                       "Property": "# Customers (w/ Sales)"
