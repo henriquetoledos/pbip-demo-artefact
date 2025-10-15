@@ -2,6 +2,17 @@
 
 This repository showcases a Power BI Project (PBIP) folder structure in the [src folder](./src/).
 
+
+```mermaid
+graph TD
+  Report01.Report --> Model01.SemanticModel
+  Report02.Report --> Model01.SemanticModel
+  Report03.Report --> Model01.SemanticModel
+  Report04.Report --> Model02.SemanticModel
+  Report05.Report --> Model03.SemanticModel
+
+```
+
 ## GitHub Copilot
 
 You can use [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) or [Roo Code](https://docs.roocode.com/) to modify your PBIP files more efficiently—for example, by setting descriptions across all semantic model objects. This project includes a [copilot-instructions.md](./.roo/rules/01-power-bi-rules.md) file that guides Copilot to work more effectively with TMDL files.
