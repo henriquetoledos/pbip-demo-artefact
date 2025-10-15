@@ -87,7 +87,10 @@ table Sales
 		formatString: $ #,##0
 		lineageTag: bdf081eb-1952-439f-96b1-a27e1a13f1a3
 
-	measure '# Sales' = COUNTROWS('Sales')
+	measure '# Sales' =
+			
+			// Test comment Measure
+			COUNTROWS('Sales')
 		formatString: #,0
 		lineageTag: 67791bd1-5f33-4a29-a9ac-be0ad2453fcf
 
